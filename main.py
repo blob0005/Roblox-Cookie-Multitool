@@ -1,32 +1,38 @@
+try:
+    import os
+    from os import system
+    system("title " + "Roblox Cookie Multitool")
+except:
+    pass
 import colorama, random, requests
 colorama.init()
 def cookie_checker():
 	cookie = input("Enter Roblox Cookie: ")
 	try:
 		r = requests.get("https://www.roblox.com/mobileapi/userinfo", cookies={".ROBLOSECURITY": cookie}).json()
-		print(colorama.Fore.GREEN +"Cookie Is Valid")
+		print("Cookie Is Valid")
 		try:
-			print("Acount User Id: " + str(r["UserID"]))
+			print("Acount User Id: " +  str(r["UserID"]))
 		except Exception:
 			print("Acount User Id: ERROR")
 		try:
-			print("Acount Username: " + str(r["UserName"]))
+			print("Acount Username: " +  str(r["UserName"]))
 		except Exception:
 			print("Acount Username: ERROR")
-		try:
-			print("Robux Balance: " + str(r["RobuxBalance"]))
+		try:	
+			print("Robux Balance: " +  str(r["RobuxBalance"]))
 		except Exception:
 			print("Robux Balance: ERROR")
-		try:
-			print("Account Picture: " + str(r["ThumbnailUrl"]))
+		try:	
+			print("Account Picture: " +  str(r["ThumbnailUrl"]))
 		except Exception:
 			print("Account Picture: ERROR")
-		try:
-			print("Builders Club Member: " + str(r["IsAnyBuildersClubMember"]))
+		try:	
+			print("Builders Club Member: " +  str(r["IsAnyBuildersClubMember"]))
 		except Exception:
 			print("Builders Club Member: ERROR")
-		try:
-			print("Premium: " + str(r["IsPremium"]))
+		try:	
+			print("Premium: " +  str(r["IsPremium"]))
 		except Exception:
 			print("Premium: ERROR")
 		while True:
@@ -36,36 +42,36 @@ def cookie_checker():
 			else:
 				print("Enter A Valid Choice")
 		if save == "y":
-			file = open(str(r["UserName"]) + ".txt", "a")
+			file = open(str(r["UserName"])+".txt", "a")
 			try:
-				file.write("Acount User Id: " + str(r["UserID"]) + "\n")
+				file.write("Acount User Id: " +  str(r["UserID"]) + "\n")
 			except Exception:
 				file.write("Acount User Id: ERROR" + "\n")
 			try:
-				file.write("Acount Username: " + str(r["UserName"]) + "\n")
+				file.write("Acount Username: " +  str(r["UserName"]) + "\n")
 			except Exception:
 				file.write("Acount Username: ERROR" + "\n")
-			try:
-				file.write("Robux Balance: " + str(r["RobuxBalance"]) + "\n")
+			try:	
+				file.write("Robux Balance: " +  str(r["RobuxBalance"]) + "\n")
 			except Exception:
 				file.write("Robux Balance: ERROR" + "\n")
-			try:
-				file.write("Account Picture: " + str(r["ThumbnailUrl"]) + "\n")
+			try:	
+				file.write("Account Picture: " +  str(r["ThumbnailUrl"]) + "\n")
 			except Exception:
 				file.write("Account Picture: ERROR" + "\n")
-			try:
-				file.write("Builders Club Member: " + str(r["IsAnyBuildersClubMember"]) + "\n")
+			try:	
+				file.write("Builders Club Member: " +  str(r["IsAnyBuildersClubMember"]) + "\n")
 			except Exception:
 				file.write("Builders Club Member: ERROR" + "\n")
-			try:
-				file.write("Premium: " + str(r["IsPremium"]) + "\n")
+			try:	
+				file.write("Premium: " +  str(r["IsPremium"]) + "\n")
 			except Exception:
 				file.write("Premium: ERROR" + "\n")
 			file.close()
 			print("Succsesfully Saved")
 			input("")
 	except Exception:
-		print(colorama.Fore.RED + "Cookie Invalid")
+		print("Cookie Invalid")
 		input("")
 def cookie_gen():
 	while True:
@@ -109,17 +115,17 @@ def cookie_gen_checker():
 		r2 = requests.get("https://api.roblox.com/currency/balance", cookies={".ROBLOSECURITY": str(cookie_to_check)})
 		r2 = str(r2)
 		if "200" in r2:
-			print(colorama.Fore.GREEN + "Cookie Valid: " + str(cookie_to_check))
+			print("Cookie Valid: " + str(cookie_to_check))
 			if save == "y":
 				file = open("valid_cookies.txt", "a")
 				file.write(cookie_to_check + "\n")
 				file.close()
 		if "200" not in r2:
-			print(colorama.Fore.RED + "Cookie Invalid: " + cookie_to_check)
+			print("Cookie Invalid: " + cookie_to_check)
 			if save == "y":
 				file2 = open("invalid_cookies.txt", "a")
 				file2.write(cookie_to_check + "\n")
-				file2.close()
+				file2.close()		
 while True:
     print(colorama.Fore.CYAN + """
     _________                __   .__               
