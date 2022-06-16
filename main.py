@@ -1,6 +1,6 @@
 try:
     from os import system
-    system("title " + "Roblox Cookie Multitool")
+    system("title " + "Roblox Cookie Multitool,   Made By blob#0005,   Github: github.com/blob0005")
 except:
     pass
 error = False
